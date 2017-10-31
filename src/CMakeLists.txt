@@ -8,4 +8,4 @@ add_executable(main
   main.cc
 )
 
-target_link_libraries(main m pthread)
+target_link_libraries(main ${PYTHIA8_LIBRARY} m pthread dl)
