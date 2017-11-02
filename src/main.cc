@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include "Pythia8/Pythia.h"
 
 using Pythia8::Pythia;
@@ -9,7 +10,7 @@ int main() {
   pythia.readString("SoftQCD:all = on");
   pythia.init();
 
-  for (int iEvent = 0; iEvent < 1; ++iEvent) {
+  for (int iEvent = 0; iEvent < 10000; ++iEvent) {
     if (!pythia.next()) continue;
 
     std::cerr << pythia.event.size() << std::endl;
@@ -21,7 +22,6 @@ int main() {
       }
     }
 
-    // We need information for the number of the jets in one vertex, maybe
     std::cerr << std::endl;
   }
 
